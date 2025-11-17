@@ -1,33 +1,30 @@
 package classes;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Psicologo extends Pessoa{
-	
-		
-	//Construtor
+public class Psicologo extends Pessoa {
+
+	// Construtor
+	// Ideias de atributos diferenste de Cliente
+	String avaliacao;
+	Double salario;
 
 	public Psicologo(String nome, int idade, String senha, String email, String cpf, String sexo) {
 		super(nome, idade, senha, email, cpf, sexo);
-		//this.registro = registro;
-		
-	}
-	
-	
-	
+		// this.registro = registro;
 
-	//Métodos anotacao
+	}
+
+	// Métodos anotacao
 	public void Anotacao_p() {
 		super.Anotacao();
 		Scanner scan = new Scanner(System.in);
-		
+
 		System.out.println("Registrar anotação do seu paciente?");
-		//Mesmo tipo de relação do cliente com psicologo porem agora sera com a classe empresa
-		
+		// Mesmo tipo de relação do cliente com psicologo porem agora sera com a classe
+		// empresa
+
 	}
 
-	
-	
 }
-
-
