@@ -1,0 +1,86 @@
+package classes;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Psicologo extends Pessoa {
+
+    private Map<String, ArrayList<String>> anotacoesPacientes = new HashMap<>();
+    private ArrayList<Integer> avaliacoes = new ArrayList<>();
+
+    public Psicologo(String nome, int idade, String senha, String email, String cpf, String sexo) {
+        super(nome, idade, senha, email, cpf, sexo);
+    }
+
+    public void Anotacao_p() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("\n SISTEMA DE ANOTAÇÕES DO PSICÓLOGO ");
+
+        System.out.print("Digite o nome do paciente: ");
+        String nomePaciente = scan.nextLine();
+
+        anotacoesPacientes.putIfAbsent(nomePaciente, new ArrayList<>());
+        ArrayList<String> lista = anotacoesPacientes.get(nomePaciente);
+
+        while (true) {
+            System.out.print("Digite a anotação: ");
+            String anotacao = scan.nextLine();
+            lista.add(anotacao);
+
+            System.out.print("Deseja adicionar outra anotação? (S/N): ");
+            String esc = scan.nextLine();
+
+            if (esc.equalsIgnoreCase("N")) {
+                break;
+            }
+        }
+
+        System.out.println("\nAnotações salvas com sucesso!");
+    }
+
+    //Mostrar todas as anotações
+    public void mostrarAnotacoes() {
+        System.out.println("\n=== ANOTAÇÕES DO PSICÓLOGO ===");
+
+        if (anotacoesPacientes.isEmpty()) {
+            System.out.println("Nenhuma anotação registrada.");
+            return;
+        }
+
+        for (String paciente : anotacoesPacientes.keySet()) {
+            System.out.println("\nPaciente: " + paciente);
+            for (String nota : anotacoesPacientes.get(paciente)) {
+                System.out.println("- " + nota);
+            }
+        }
+    
+    // MÉTODO NOVO (pedido): receber anotação de um Cliente
+    public void receberAnotacao(String nomePaciente, String mensagem) {
+
+        anotacoesPacientes.putIfAbsent(nomePaciente, new ArrayList<>());
+        anotacoesPacientes.get(nomePaciente).add(mensagem);
+
+        System.out.println("Anotação recebida do paciente " + nomePaciente + ".");
+    }
+
+
+    // MÉTODO NOVO (pedido): registrar avaliação
+    public void receberAvaliacao(int nota) {
+        avaliacoes.add(nota);
+        System.out.println("Avaliação registrada: " + nota);
+    }
+
+    // (opcional) Média das avaliações
+    public double getMediaAvaliacoes() {
+        if (avaliacoes.isEmpty()) return 0;
+
+        int soma = 0;
+        for (int n : avaliacoes) {
+            soma += n;
+        }
+        return (double) soma / avaliacoes.size();
+    }
+}
