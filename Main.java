@@ -45,20 +45,24 @@ public class Main {
 			System.out.println("[1] Meu diário pessoal. \n"
 					+ "[2] Avaliar psicólogo \n"
 					+ "[3] Consultar mensalidade do consultório");
-			int esc_p = scan.nextInt();
+			int esc_c = scan.nextInt();
 			scan.nextLine();
-			if(esc_p == 1) {
+			if(esc_c == 1) {
 				Psicologo.Anotacao_p(); 
 			}
 				
 		
-			if (esc_p == 2) {
+			if (esc_c == 2) {
 				System.out.println("Faça sua anotação:");
 				int test_p = scan.nextInt();
 				scan.nextLine();
 				//Cliente.receberAvaliacao(test_p); 
 				
 			}
+			
+			if(esc_c == 3) {}
+			System.out.println("== Consultar mensalidade ==");
+			Cliente.consultarMensalidade();
 		}
 
 		// Psicologo
