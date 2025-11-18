@@ -109,4 +109,11 @@ public class Empresa {
 		return email_alt;
 
 	}
+	
+	public static void calcularSalario(Psicologo psicologo) {
+		double c_s = (Psicologo.getSessoes() / 10) * 500;
+		System.out.println("O seu salário do mês é este: " + c_s);
+		
+	}
+
 }

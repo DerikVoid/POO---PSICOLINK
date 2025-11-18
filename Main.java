@@ -5,11 +5,24 @@ import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
+		
+		// TESTE DE AVALIAÇÃO
 		Cliente pessoa = new Cliente("Carlos", 29, "23", "c@c", "123", "M");
 		Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
 		pessoa.avaliarPsicologo(psicologo, 5);
 		pessoa.avaliarPsicologo(psicologo, 7);
-		System.out.println("Avaliação média do psicológo:"+ psicologo.getAvaliacaoMedia());
+		System.out.println("Avaliação média do psicológo:"+ psicologo.getAvaliacaoMedia()); 
+		// FIM DO TESTE
+		
+		// TESTE SALARIO
+		/*Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
+		Empresa empresa = new Empresa("PsicoInsight", "38.514.927/0001-62", "corporativo@psicinsight.com",
+				"PsiC0rp!2025");
+		psicologo.numeroSessoes();
+		empresa.calcularSalario(psicologo);
+		*/
+		
+		
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Seja bem-vindo ao Psicolink!! \n " + "qual o seu formato de entrada no sistema: \n"
 				+ "[1] Cliente \n" + "[2] Psicologo \n" + "[3] Empresa");

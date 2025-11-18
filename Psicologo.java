@@ -10,26 +10,48 @@ public class Psicologo extends Pessoa {
 	// Construtor
 	// Ideias de atributos diferenste de Cliente
 	Double salario;
+	static int sessoes;
 	ArrayList<Integer> avaliacoes = new ArrayList<>();
+	private static Map<String, ArrayList<String>> anotacoesPacientes = new HashMap<>();
+	
+	public Double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(Double salario) {
+		this.salario = salario;
+	}
+
+	public static int getSessoes() {
+		return sessoes;
+	}
+
+	public void setSessoes(int sessoes) {
+		this.sessoes = sessoes;
+	}
+	
+	 public double getAvaliacaoMedia() {
+	    	double avaliacaoMedia = 0;
+	    	int soma = 0;
+
+	    	for (Integer num : this.avaliacoes) {
+	    	    soma += num;
+	    	}
+
+	    	avaliacaoMedia = soma / this.avaliacoes.size();
+	    	return avaliacaoMedia;
+	    }
+
+	
 
     
-	private static Map<String, ArrayList<String>> anotacoesPacientes = new HashMap<>();
+	
 	// Atributos de herança da classe mãe Pessoa
     public Psicologo(String nome, int idade, String senha, String email, String cpf, String sexo) {
         super(nome, idade, senha, email, cpf, sexo);
     }
     
-    public double getAvaliacaoMedia() {
-    	double avaliacaoMedia = 0;
-    	int soma = 0;
-
-    	for (Integer num : this.avaliacoes) {
-    	    soma += num;
-    	}
-
-    	avaliacaoMedia = soma / this.avaliacoes.size();
-    	return avaliacaoMedia;
-    }
+ 
 
     public static void Anotacao_p() {
         Scanner scan = new Scanner(System.in);
@@ -75,6 +97,16 @@ public class Psicologo extends Pessoa {
             }
             
         }
+    
+    public static int numeroSessoes () {
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Quantas seções no mês foram registradas?");
+    	int sessoes = scan.nextInt();
+    	sessoes = getSessoes();
+    	return sessoes;
+    	}
+
+    
 }    
     
     
