@@ -14,18 +14,21 @@ public class Main {
 		pessoa.avaliarPsicologo(psicologo, 7);
 		System.out.println("Avaliação média do psicológo:"+ psicologo.getAvaliacaoMedia()); */
 		// FIM DO TESTE
-		
-		// TESTE SALARIO
-		Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
 		Empresa empresa = new Empresa("PsicoInsight", "38.514.927/0001-62", "corporativo@psicinsight.com",
 				"PsiC0rp!2025");
-		psicologo.numeroSessoes();
-		empresa.calcularSalario(psicologo);
-		//
-		
+		//TESTE DE AVALIAÇÃO
+		Cliente pessoa = new Cliente("Carlos", 29, "23", "c@c", "123", "M");
+		Psicologo psicologos = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
+		pessoa.avaliarPsicologo(psicologos, 5);
+		pessoa.avaliarPsicologo(psicologos, 7);
+		pessoa.avaliarPsicologo(psicologos, 10);
+		pessoa.avaliarPsicologo(psicologos, 8);
+		pessoa.avaliarPsicologo(psicologos, 8);
+		pessoa.avaliarPsicologo(psicologos, 5);
+		pessoa.avaliarPsicologo(psicologos, 10);
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Seja bem-vindo ao Psicolink!! \n " + "qual o seu formato de entrada no sistema: \n"
+		System.out.println(" Seja bem-vindo ao Psicolink!! \n " + "qual o seu formato de entrada no sistema: \n"
 				+ "[1] Cliente \n" + "[2] Psicologo \n" + "[3] Empresa");
 		int entrada = scan.nextInt();
 		scan.nextLine();
@@ -62,7 +65,8 @@ public class Main {
 			int esc_c = scan.nextInt();
 			scan.nextLine();
 			if(esc_c == 1) {
-				Psicologo.Anotacao_p(); 
+				Cliente.Anotacao_c(); 
+				Cliente.mostrarAnotacoes_c();
 			}
 				
 		
@@ -70,20 +74,16 @@ public class Main {
 				System.out.println("== SISTEMA DE AVALIAÇÃO DO PSICÓLOGO");
 				int test_p = scan.nextInt();
 				scan.nextLine();
-				//if()
-				//pessoa.avaliarPsicologo(psicologo, test_p);
-				
-				//Cliente.receberAvaliacao(test_p); 
 				
 			}
 			
-			if(esc_c == 3) {}
+			if(esc_c == 3) {
 			System.out.println("== SISTEMA DE CONSULTA DE MENSALIDADE ==");
 			Cliente.consultarMensalidade();
+			}
 		}
-
 		// Psicologo
-		if (entrada == 2) {
+			if (entrada == 2) {
 
 			// Caso uma empresa se cadastre vai funcionar do msm jeito, mas com os dados da
 			// empresa
@@ -134,9 +134,11 @@ public class Main {
 			if(esc_p == 1) {
 				System.out.println("== SISTEMA DE ANOTAÇÃO ==");
 				Psicologo.Anotacao_p(); 
+				Psicologo.mostrarAnotacoes();
 			}
 			if(esc_p == 2) {
 				System.out.println("== SISTEMA DE MÉDIA AVALIATIVA ==");
+				System.out.println("Avaliação média do psicológo:"+ psicologos.getAvaliacaoMedia()); 
 			}
 
 			
@@ -146,19 +148,17 @@ public class Main {
 				Empresa.calcularSalario(psicologo1);
 			}
 
-				
 			
-			
-			
-			
-	}
-
+			}
+		
 		// Empresa
 		if (entrada == 3) {
 			Empresa.CriacaoEmpresa();
 			System.out.println("== SISTEMA DE CADASTRO DE EMPRESA ==");
 			System.out.println("");
-
-		}
-	}
-}
+							}
+						}
+					}	
+			
+					
+	
