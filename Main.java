@@ -7,20 +7,21 @@ public class Main {
 	public static void main(String[] args) {
 		
 		// TESTE DE AVALIAÇÃO
-		Cliente pessoa = new Cliente("Carlos", 29, "23", "c@c", "123", "M");
-		Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
+		//Cliente pessoa = new Cliente("Carlos", 29, "23", "c@c", "123", "M");
+		//pessoa.consultarMensalidade();
+		/*Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
 		pessoa.avaliarPsicologo(psicologo, 5);
 		pessoa.avaliarPsicologo(psicologo, 7);
-		System.out.println("Avaliação média do psicológo:"+ psicologo.getAvaliacaoMedia()); 
+		System.out.println("Avaliação média do psicológo:"+ psicologo.getAvaliacaoMedia()); */
 		// FIM DO TESTE
 		
 		// TESTE SALARIO
-		/*Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
+		Psicologo psicologo = new Psicologo("Joao", 47, "33", "e@e", "321", "M");
 		Empresa empresa = new Empresa("PsicoInsight", "38.514.927/0001-62", "corporativo@psicinsight.com",
 				"PsiC0rp!2025");
 		psicologo.numeroSessoes();
 		empresa.calcularSalario(psicologo);
-		*/
+		//
 		
 		
 		Scanner scan = new Scanner(System.in);
@@ -66,15 +67,18 @@ public class Main {
 				
 		
 			if (esc_c == 2) {
-				System.out.println("Faça sua anotação:");
+				System.out.println("== SISTEMA DE AVALIAÇÃO DO PSICÓLOGO");
 				int test_p = scan.nextInt();
 				scan.nextLine();
+				//if()
+				//pessoa.avaliarPsicologo(psicologo, test_p);
+				
 				//Cliente.receberAvaliacao(test_p); 
 				
 			}
 			
 			if(esc_c == 3) {}
-			System.out.println("== Consultar mensalidade ==");
+			System.out.println("== SISTEMA DE CONSULTA DE MENSALIDADE ==");
 			Cliente.consultarMensalidade();
 		}
 
@@ -98,6 +102,8 @@ public class Main {
 			String sexo_p = scan.nextLine();
 
 			Psicologo psicologo1 = new Psicologo(nome_p, idade_p, "1111", "email@alter", cpf_p, sexo_p);
+			
+			
 
 			// Criação de uma empresa genérica caso uma não tenha sido cadastrada ainda.
 			// Logo em seguida com a msm são criados email e senha para o psicologo com as
@@ -120,14 +126,26 @@ public class Main {
 			
 			System.out.println("OK! tudo pronto " + psicologo1.getNome());
 			System.out.println("Deseja utilizar alguma função?");
-			System.out.println("[1] Meu diário pessoal. \n"
+			System.out.println("[1] Anotações pacientes. \n"
 					+ "[2] Ver suas avaliações. \n"
-					+ "[3] Consultar mensalidade do consultório");
+					+ "[3] Consultar Salário");
 			int esc_p = scan.nextInt();
 			scan.nextLine();
 			if(esc_p == 1) {
+				System.out.println("== SISTEMA DE ANOTAÇÃO ==");
 				Psicologo.Anotacao_p(); 
 			}
+			if(esc_p == 2) {
+				System.out.println("== SISTEMA DE MÉDIA AVALIATIVA ==");
+			}
+
+			
+			if(esc_p ==3) {
+				System.out.println("== SISTEMA DE SALÁRIO ==");
+				psicologo1.numeroSessoes();
+				Empresa.calcularSalario(psicologo1);
+			}
+
 				
 			
 			
@@ -138,6 +156,7 @@ public class Main {
 		// Empresa
 		if (entrada == 3) {
 			Empresa.CriacaoEmpresa();
+			System.out.println("== SISTEMA DE CADASTRO DE EMPRESA ==");
 			System.out.println("");
 
 		}

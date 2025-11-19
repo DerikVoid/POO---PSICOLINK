@@ -67,9 +67,10 @@ public class Cliente extends Pessoa {
 		int mes_futuro = dataFutura.getDayOfMonth();
 		int dia_futuro = dataFutura.getMonthValue();
 		
-		System.out.print("A mensalidade de suas consultas cairá no dia " + dataFutura + " \n"
+		System.out.print("A mensalidade de suas consultas cairá no dia \n"
+				+ "" + dataFutura + " \n"
 				+ "restando até o pagamento \n"
-				+ " " + (dia_futuro - dia_atual) + " dias.");	
+				+ (dia_futuro - dia_atual) + " dias.");	
 		}
 
 }

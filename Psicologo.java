@@ -83,7 +83,7 @@ public class Psicologo extends Pessoa {
 
     //Mostrar todas as anotações
     public void mostrarAnotacoes() {
-        System.out.println("\n=== ANOTAÇÕES DO PSICÓLOGO ===");
+        //System.out.println("\n=== ANOTAÇÕES DO PSICÓLOGO ===");
 
         if (anotacoesPacientes.isEmpty()) {
             System.out.println("Nenhuma anotação registrada.");
@@ -98,13 +98,36 @@ public class Psicologo extends Pessoa {
             
         }
     
-    public static int numeroSessoes () {
+    public static Psicologo CriacaoPsicologo() {
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("Digite seu nome:");
+		String nome_p = scan.nextLine();
+
+		System.out.println("Digite sua idade:");
+		int idade_p = scan.nextInt();
+		scan.nextLine();
+
+		System.out.println("Digite seu CPF:");
+		String cpf_p = scan.nextLine();
+
+		System.out.println("Digite seu sexo:");
+		String sexo_p = scan.nextLine();
+
+		Psicologo psicologo1 = new Psicologo(nome_p, idade_p, "1111", "email@alter", cpf_p, sexo_p);
+		return psicologo1;
+    }
+
+    
+    
+    // Método de adicionar o numero de seções:
+    public void numeroSessoes () {
     	Scanner scan = new Scanner(System.in);
     	System.out.println("Quantas seções no mês foram registradas?");
     	int sessoes = scan.nextInt();
-    	sessoes = getSessoes();
-    	return sessoes;
+    	this.setSessoes(sessoes);
     	}
+    	
+    
 
     
 }    

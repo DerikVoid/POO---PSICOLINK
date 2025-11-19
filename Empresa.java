@@ -110,9 +110,10 @@ public class Empresa {
 
 	}
 	
+	//Método de calcular o salario do PSicologo de acordo com sua quantidade de avaliações
 	public static void calcularSalario(Psicologo psicologo) {
 		double c_s = (Psicologo.getSessoes() / 10) * 500;
-		System.out.println("O seu salário do mês é este: " + c_s);
+		System.out.printf("O seu salário do mês é este: R$ %.2f", c_s);
 		
 	}
 
